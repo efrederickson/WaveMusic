@@ -1,0 +1,13 @@
+.DS_Store
+._*
+*.deb
+.debmake
+_
+obj
+.theos
+*.bak
+*.bak2
+debs/
+theos
+backboardd
+backboardd_headers/

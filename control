@@ -1,0 +1,9 @@
+Package: com.efrederickson.wavemusic
+Name: WaveMusic
+Depends: mobilesubstrate
+Version: 0.0.1
+Architecture: iphoneos-arm
+Description: Waveform visualizer in the Music app!
+Maintainer: Elijah Frederickson <elijah.frederickson@gmail.com>
+Author: Elijah Frederickson <elijah.frederickson@gmail.com>
+Section: Tweaks
