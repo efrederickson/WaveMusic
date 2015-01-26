@@ -14,7 +14,7 @@ TODO:
 */
 
 BOOL useLogWaveform = NO;
-BOOL useSoundCloudyRenderer = YES;
+BOOL useSoundCloudyRenderer = NO;
 
 @protocol WMWaveformViewDelegate <NSObject>
 @optional
@@ -470,8 +470,14 @@ BOOL useSoundCloudyRenderer = YES;
         AVLinearPCMIsFloatKey: @NO,
         AVLinearPCMIsNonInterleaved: @NO
     };
-
-    AVAssetReaderTrackOutput* output = [[AVAssetReaderTrackOutput alloc] initWithTrack:songTrack outputSettings:outputSettingsDict];
+    
+    AVAssetReaderTrackOutput* output = nil;
+    @try {
+        output = [[AVAssetReaderTrackOutput alloc] initWithTrack:songTrack outputSettings:outputSettingsDict];
+    } @catch (NSException *ex) {
+        NSLog(@"[WaveMusic] error loading track: %@", ex);
+        return;        
+    }
 
     [reader addOutput:output];
     [output release];
